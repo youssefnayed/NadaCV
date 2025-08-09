@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية الاحترافية | ندى محروس عبدالله</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            /* نظام ألوان جديد وأكثر احترافية */
+            --primary-color: #005f73;  /* أزرق مخضر داكن */
+            --secondary-color: #0a9396; /* أزرق مخضر متوسط */
+            --accent-color: #ee9b00;   /* ذهبي دافئ */
+            --light-grey: #f8f9fa;     /* رمادي فاتح جداً */
+            --white-color: #ffffff;
+            --text-color: #333;        /* لون نص أغمق قليلاً للوضوح */
+            --sidebar-grad: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-grey);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        .resume-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white-color);
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            /* ظل أكثر نعومة */
+            box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar Styles --- */
+        .sidebar {
+            background: var(--sidebar-grad);
+            color: var(--white-color);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(238, 155, 0, 0.5);
+        }
+
+        .sidebar h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 800;
+            letter-spacing: 0.5px; /* لمسة احترافية */
+        }
+
+        .sidebar h2 {
+            margin: 0.25rem 0 1.5rem;
+            font-weight: 400;
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.85);
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sidebar-section {
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3em;
+            text-align: center;
+        }
+
+        .contact-list, .language-list {
+            list-style: none;
+        }
+
+        .contact-list li, .language-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.95em;
+        }
+        
+        .contact-list li i {
+            font-size: 1.1em;
+            margin-left: 1rem;
+            width: 25px;
+            color: var(--accent-color);
+        }
+
+        .language-name {
+            margin-bottom: 0.3rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .progress {
+            background-color: var(--accent-color);
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* --- Main Content Styles --- */
+        .main-content {
+            padding: 3rem;
+        }
+
+        .main-section {
+            margin-bottom: 3rem;
+        }
+
+        .main-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px; /* لمسة احترافية */
+        }
+
+        .section-title i {
+            margin-left: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .main-section p {
+            font-size: 1.05em;
+        }
+        
+        .education-item strong {
+             color: var(--primary-color);
+             font-size: 1.1em;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .skills-list li {
+            background: var(--light-grey);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            border-right: 4px solid var(--accent-color);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .skills-list li:hover {
+            background-color: #e9ecef;
+            transform: translateY(-3px);
+        }
+
+        .skills-list i {
+            color: var(--primary-color);
+            margin-left: 1rem;
+            font-size: 1.2em;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .resume-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .main-content {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding: 0;
+            }
+            .resume-wrapper {
+                border-radius: 0;
+            }
+            .sidebar, .main-content {
+                padding: 1.5rem;
+            }
+            .sidebar h1 { font-size: 1.8em; }
+            .section-title { font-size: 1.5em; }
+            .skills-list { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="resume-wrapper">
+        
+        <aside class="sidebar">
+            <img src="https://www.raed.net/img?id=1399193" alt="ندى محروس عبدالله" class="profile-pic">
+            <h1>ندى محروس عبدالله</h1>
+            <h2>سكرتيرة إدارية</h2>
+
+            <div class="sidebar-section">
+                <h3><i class="fas fa-id-card"></i> معلومات التواصل</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-phone"></i> 01148408052</li>
+                    <li><i class="fas fa-map-marker-alt"></i> التجمع الخامس - القاهرة</li>
+                    <li><i class="fas fa-venus-mars"></i> آنسة</li>
+                    <li><i class="fas fa-calendar-alt"></i> 24 ديسمبر 1999</li>
+                </ul>
+            </div>
+            
+          <div class="sidebar-section">
+    <h3><i class="fas fa-globe-africa"></i> اللغات</h3>
+    <ul class="language-list">
+        <li>
+            <div>
+                <p class="language-name">العربية (اللغة الأم)</p>
+                <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+            </div>
+        </li>
+         <li>
+            <div>
+                <p class="language-name">الانجليزية (مستوى جيد)</p>
+                <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+            </div>
+        </li>
+    </ul>
+</div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <section class="main-section">
+                <h3 class="section-title"><i class="fas fa-user-tie"></i> الملخص الاحترافي</h3>
+                <p>سكرتيرة إدارية منظمة وموجهة بالتفاصيل، أمتلك مهارات عالية في إدارة المواعيد والمراسلات باحترافية. أسعى للمساهمة بفاعلية في نجاح المؤسسة من خلال تقديم دعم إداري سلس ومنظم، مع قدرة مثبتة على العمل تحت الضغط والحفاظ على سرية المعلومات.</p>
+            </section>
+            
+            <section class="main-section">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> المؤهل العلمي</h3>
+                <div class="education-item">
+                    <p><strong>معهد الدلتا</strong></p>
+                    <p>بكالوريوس إدارة أعمال سياحية - تخرج عام <strong>2024</strong></p>
+                </div>
+            </section>
+            
+            <section class="main-section">
+                <h3 class="section-title"><i class="fas fa-clipboard-list"></i> المهارات الأساسية</h3>
+                <ul class="skills-list">
+                    <li><i class="fas fa-calendar-check"></i> تنظيم وإدارة المواعيد والاجتماعات</li>
+                    <li><i class="fas fa-file-signature"></i> إعداد وصياغة المراسلات الرسمية</li>
+                    <li><i class="fas fa-computer"></i> برامج مايكروسوفت أوفيس (Word, Excel, PPT)</li>
+                    <li><i class="fas fa-clock"></i> إدارة الوقت والعمل تحت ضغط</li>
+                    <li><i class="fas fa-folder-open"></i> إدارة وأرشفة الملفات</li>
+                    <li><i class="fas fa-calendar-day"></i> تنسيق وتنظيم الفعاليات</li>
+                    <li><i class="fas fa-headset"></i> خدمة العملاء وحل المشكلات</li>
+                    <li><i class="fas fa-list-check"></i> متابعة وتنفيذ المهام الإدارية</li>
+                </ul>
+            </section>
+        </main>
+        
+    </div>
+
+</body>
+</html>
